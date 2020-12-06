@@ -1,5 +1,6 @@
 ﻿using SharedProject;
 using Xunit;
+using Xunit.DependencyInjection;
 
 namespace BasicUsage
 {
@@ -18,6 +19,14 @@ namespace BasicUsage
             var newId = _idGenerator.NewId();
             Assert.NotNull(newId);
             Assert.NotEmpty(newId);
+        }
+
+        [Theory]
+        [InlineData(null)]
+        public void MethodInjectionTest([FromServices] IIdGenerator idGenerator)
+        {
+            Assert.NotNull(idGenerator);
+            Assert.Equal(_idGenerator, idGenerator);
         }
     }
 }
