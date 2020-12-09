@@ -25,5 +25,11 @@ namespace TestServerIntegration
                 })
                 ;
         }
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            // ready check
+            services.AddHostedService<ReadyCheckHostedService>();
+        }
     }
 }

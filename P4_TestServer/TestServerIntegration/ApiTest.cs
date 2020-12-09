@@ -16,9 +16,16 @@ namespace TestServerIntegration
         }
 
         [Fact]
+        public async Task ReadyTest()
+        {
+            using var response = await _httpClient.GetAsync("api/ready");
+            Assert.True(response.IsSuccessStatusCode);
+        }
+
+        [Fact]
         public async Task GetTest()
         {
-            var response = await _httpClient.GetAsync("api/test");
+            using var response = await _httpClient.GetAsync("api/test");
             Assert.True(response.IsSuccessStatusCode);
 
             var responseText = await response.Content.ReadAsStringAsync();
