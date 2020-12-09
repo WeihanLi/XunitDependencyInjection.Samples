@@ -1,0 +1,27 @@
+name: dotnetcore
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: dotnet info
+      run: dotnet --info
+    - name: dotnet test GetStarted 
+      run: dotnet test P1_GetStarted/GetStarted.sln
+    - name: dotnet test AutoFac 
+      run: dotnet test P2_AutoFac/AutoFacIntegration.sln
+    - name: dotnet test AspectCore 
+      run: dotnet test P3_AspectCore/AspectCoreIntegration.sln
+    - name: dotnet test TestServer 
+      run: dotnet test P4_TestServer/TestServerIntegration.sln
+    - name: dotnet test More 
+      run: dotnet test P5_More/MoreFeatures.sln
