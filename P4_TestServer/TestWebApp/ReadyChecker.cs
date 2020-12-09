@@ -6,7 +6,7 @@ namespace TestWebApp
     {
         private static int _readyStatus;
 
-        static ReadChecker()
+        static ReadyChecker()
         {
             Task.Run(async () =>
             {
