@@ -1,6 +1,11 @@
+using System.Reflection;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 
 namespace MinimalApiTest;
@@ -9,6 +14,15 @@ public static class MinimalApiHostBuilderFactory
 {
     public static IHostBuilder GetHostBuilder<TEntry>(Action<IWebHostBuilder>? configure = null) where TEntry: class
     {
+        // var testingAssembly = typeof(WebApplicationFactory<>).Assembly;
+        // var hostFactoryResolverType = testingAssembly.GetType("Microsoft.Extensions.Hosting.HostFactoryResolver");
+        // ArgumentNullException.ThrowIfNull(hostFactoryResolverType);
+        // var resolveHostFactoryMethod = hostFactoryResolverType.GetMethod("ResolveHostFactory", BindingFlags.Static | BindingFlags.Public);
+        // ArgumentNullException.ThrowIfNull(resolveHostFactoryMethod);
+        // //
+        // var deferredHostBuilderType = testingAssembly.GetType("Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder");
+        // ArgumentNullException.ThrowIfNull(deferredHostBuilderType);
+        //
         var entryAssembly = typeof(TEntry).Assembly;
         var deferredHostBuilder = new DeferredHostBuilder();
         deferredHostBuilder.UseEnvironment(Environments.Development);
@@ -37,6 +51,11 @@ public static class MinimalApiHostBuilderFactory
             webHostBuilder.UseSolutionRelativeContentRoot(entryAssembly.GetName().Name!);
             configure?.Invoke(webHostBuilder);
             webHostBuilder.UseTestServer();
+            webHostBuilder.ConfigureServices(services =>
+            {
+                services.TryAddSingleton(sp => ((TestServer)sp.GetRequiredService<IServer>())
+                    .CreateClient());
+            });
         });
         return deferredHostBuilder;
     }

@@ -1,5 +1,4 @@
 using MinimalApiSample;
-using Xunit.DependencyInjection;
 
 namespace MinimalApiTest;
 
