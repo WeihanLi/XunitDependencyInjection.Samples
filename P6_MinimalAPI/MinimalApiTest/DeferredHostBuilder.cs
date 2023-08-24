@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace MinimalApiTest;
 
+// https://github.com/dotnet/aspnetcore/blob/a0db11ba7c3ae217e9745976056f10cb2a7dafde/src/Mvc/Mvc.Testing/src/DeferredHostBuilder.cs#L11
 internal sealed class DeferredHostBuilder : IHostBuilder
 {
     public IDictionary<object, object> Properties { get; } = new Dictionary<object, object>();
