@@ -1,4 +1,5 @@
 using MinimalApiSample;
+using Xunit;
 
 namespace MinimalApiTest;
 
