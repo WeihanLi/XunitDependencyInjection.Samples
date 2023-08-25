@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Hosting;
+using Xunit.DependencyInjection.AspNetCoreTesting;
 
 namespace MinimalApiTest;
 
