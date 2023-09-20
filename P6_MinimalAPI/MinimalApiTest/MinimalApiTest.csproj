@@ -1,14 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xunit.DependencyInjection.AspNetCoreTesting" Version="8.1.0" />    
+    <PackageReference Include="Xunit.DependencyInjection.AspNetCoreTesting" />
   </ItemGroup>
 
   <ItemGroup>

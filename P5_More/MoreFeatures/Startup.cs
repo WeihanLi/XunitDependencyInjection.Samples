@@ -13,13 +13,9 @@ namespace MoreFeatures
         // ConfigureServices(HostBuilderContext hostBuilderContext, IServiceCollection services)
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging(loggingBuilder => loggingBuilder.AddXunitOutput());
             services.AddSingleton<InvokeHelper>();
             services.AddHostedService<TestHostedService>();
-        }
-
-        public void Configure(ILoggerFactory loggerFactory, ITestOutputHelperAccessor outputHelperAccessor)
-        {
-            loggerFactory.AddProvider(new XunitTestOutputLoggerProvider(outputHelperAccessor));
         }
     }
 }

@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
@@ -10,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspectCore.Extensions.Hosting" Version="2.1.0" />
+    <PackageReference Include="AspectCore.Extensions.Hosting" />
   </ItemGroup>
 
 </Project>

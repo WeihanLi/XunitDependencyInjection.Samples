@@ -1,16 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <IsTestProject>true</IsTestProject>
-  </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="..\..\P1_GetStarted\SharedProject\IdGenerator.cs" Link="IdGenerator.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" />
   </ItemGroup>
 
 </Project>
