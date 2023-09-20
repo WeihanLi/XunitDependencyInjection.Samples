@@ -4,4 +4,8 @@
     <RepositoryType>git</RepositoryType>
     <Authors>WeihanLi</Authors>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
 </Project>

@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: |
-          5.0.x
-          8.0.100-preview.7.23376.3
+          6.0.x
+          8.0.100-rc.1.23455.8
     - name: dotnet info
       run: dotnet --info
     - name: dotnet test GetStarted 
