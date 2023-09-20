@@ -32,6 +32,7 @@ namespace TestServerIntegration
                 _logger.LogWarning("API has not ready");
                 await Task.Delay(1000, cancellationToken);
             }
+            
             _logger.LogInformation("API has ready");
         }
 

@@ -30,6 +30,9 @@ namespace TestServerIntegration
         {
             // ready check
             services.AddHostedService<ReadyCheckHostedService>();
+            services.AddSingleton<RedisHealthCheckService>();
+            services.AddHostedService(sp => sp.GetRequiredService<RedisHealthCheckService>());
+            services.AddHostedService<DbHealthCheckService>();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace TestWebApp
         {
             Task.Run(async () =>
             {
-                await Task.Delay(3000);
+                await Task.Delay(1000);
                 _readyStatus = 1;
             });
         }
