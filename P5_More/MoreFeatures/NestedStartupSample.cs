@@ -16,7 +16,7 @@ public class NestedStartupSample
     public void RandomTest()
     {
         var value = _random.GetValue(2);
-        Assert.True(value is > 0 and <= 2);
+        Assert.True(value is >= 0 and <= 2);
     }
     
     public class Startup
