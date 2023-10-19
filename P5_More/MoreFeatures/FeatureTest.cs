@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using System.Threading;
 using Xunit;
 
 namespace MoreFeatures
