@@ -1,20 +1,19 @@
 ﻿using Microsoft.Extensions.Hosting;
 
-namespace MoreFeatures
+namespace MoreFeatures;
+
+public sealed class TestHostedService : IHostedService
 {
-    public class TestHostedService : IHostedService
+    public static bool Started { get; private set; }
+
+    public Task StartAsync(CancellationToken cancellationToken)
     {
-        public static bool Started { get; private set; }
+        Started = true;
+        return Task.CompletedTask;
+    }
 
-        public Task StartAsync(CancellationToken cancellationToken)
-        {
-            Started = true;
-            return Task.CompletedTask;
-        }
-
-        public Task StopAsync(CancellationToken cancellationToken)
-        {
-            return Task.CompletedTask;
-        }
+    public Task StopAsync(CancellationToken cancellationToken)
+    {
+        return Task.CompletedTask;
     }
 }
