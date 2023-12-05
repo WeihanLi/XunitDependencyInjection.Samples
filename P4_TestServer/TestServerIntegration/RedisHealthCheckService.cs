@@ -13,5 +13,5 @@ public class RedisHealthCheckService : AbstractDependencyService
         return base.StartAsync(cancellationToken);
     }
 
-    public override async Task StartAsync(CancellationToken cancellationToken) => Task.CompletedTask;
+    public override Task StartAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 }
