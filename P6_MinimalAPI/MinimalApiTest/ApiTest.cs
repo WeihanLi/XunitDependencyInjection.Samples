@@ -52,5 +52,7 @@ public class ApiTest
         var responseActivityParse = ActivityContext.TryParse(responseText, null, out var activityContext);
         Assert.True(responseActivityParse);                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
         Assert.Equal(traceId, activityContext.TraceId.ToHexString());
+        Assert.True(activities.Count > 1);
+        Assert.True(activities.Exists(a=> a.ParentId == activityId));
     }
 }
