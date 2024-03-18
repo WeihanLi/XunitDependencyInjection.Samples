@@ -8,11 +8,11 @@
     <PackageVersion Include="AspectCore.Extensions.Hosting" Version="2.1.0" />
     <PackageVersion Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageVersion Include="xunit" Version="2.6.2" />
-    <PackageVersion Include="Xunit.DependencyInjection" Version="8.9.0" />
-    <PackageVersion Include="Xunit.DependencyInjection.AspNetCoreTesting" Version="8.2.1" />
-    <PackageVersion Include="Xunit.DependencyInjection.Logging" Version="8.1.0" />    
-    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.4" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageVersion Include="xunit" Version="2.7.0" />
+    <PackageVersion Include="Xunit.DependencyInjection" Version="9.0.1" />
+    <PackageVersion Include="Xunit.DependencyInjection.AspNetCoreTesting" Version="9.0.0" />
+    <PackageVersion Include="Xunit.DependencyInjection.Logging" Version="9.0.0" />    
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.7" />
   </ItemGroup>
 </Project>
