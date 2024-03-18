@@ -10,13 +10,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: |
-          6.x
           8.x
-    - name: dotnet info
-      run: dotnet --info
+    - name: dotnet-exec install
+      run: dotnet tool update --global dotnet-execute
+    - name: dotnet-exec info
+      run: dotnet-exec --info
     - name: dotnet test GetStarted 
       run: dotnet test P1_GetStarted/GetStarted.sln
     - name: dotnet test AutoFac 
