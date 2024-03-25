@@ -33,14 +33,17 @@ public class HostApplicationBuilderStartupSample(IRandom random)
 
     public static class Startup
     {
-        public static void ConfigureHostApplicationBuilder(IHostApplicationBuilder hostApplicationBuilder)
+        public static void ConfigureHostApplicationBuilder(IHostApplicationBuilder builder)
         {
-            hostApplicationBuilder.Configuration.AddInMemoryCollection(
+            builder.Configuration.AddInMemoryCollection(
             [
                 new KeyValuePair<string, string?>("Hello", "World"),
                 new KeyValuePair<string, string?>("CounterInitValue", "1")
             ]);
-            hostApplicationBuilder.Services.AddSingleton<IRandom, RandomService>();
+            if (Convert.ToInt32(builder.Configuration["CounterInitValue"]) > 0)
+            {
+                builder.Services.AddSingleton<IRandom, RandomService>();
+            }
         }
 
         public static void Configure(IConfiguration configuration)
